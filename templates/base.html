@@ -26,8 +26,11 @@
         <!-- End Navbar Area -->
 
         <!-- Banner Area -->
+        {% if request.path == "/" %}
         {% include "components/_banner.html" %}
-
+        {% else %}
+        {% include "components/_inner_banner.html" %}
+        {% endif %}
         <!-- Banner Area End -->
 
         {% block content %}

@@ -40,8 +40,13 @@
 
                             <div class="top-header-right-item">
                                 <ul class="top-header-list">
+                                    {% if request.user.is_authenticated %}
+                                    <li><a href="{% url 'login' %}">Log In</a></li>
+                                    <li><a href="{% url 'register' %}">Register</a></li>
+                                    {% else %}
                                     <li><a href="my-account.html">My Account</a></li>
-                                    <li><a href="log-in.html">Log In</a></li>
+                                    <li><a href="logout">Logout</a></li>
+                                    {% endif %}
                                 </ul>
                             </div>
                         </div>
